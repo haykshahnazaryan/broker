@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact FreightPro Logistics for freight quotes, logistics consultation, and professional freight brokering services. Get in touch today!">
+    <meta name="keywords" content="contact freight broker, get freight quote, logistics consultation, freight services contact">
+    <meta name="author" content="FreightPro Logistics">
+    <title>Contact Us - FreightPro Logistics</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <div class="nav__brand">
+                <a href="index.html" class="nav__logo">
+                    <i class="fas fa-truck"></i>
+                    FreightPro
+                </a>
+            </div>
+            
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="index.html" class="nav__link">Home</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="about.html" class="nav__link">About</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="services.html" class="nav__link">Services</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="contact.html" class="nav__link active">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="nav__toggle" id="nav-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-header__title">Contact Us</h1>
+            <p class="page-header__subtitle">Get in touch for quotes, consultations, and expert logistics solutions</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact section">
+        <div class="container">
+            <div class="contact__content">
+                <!-- Contact Info -->
+                <div class="contact__info">
+                    <h2 class="contact__title">Get In Touch</h2>
+                    <p class="contact__description">
+                        Ready to streamline your logistics operations? Contact our team of experts for personalized solutions and competitive quotes.
+                    </p>
+                    
+                    <div class="contact__details">
+                        <div class="contact-detail">
+                            <div class="contact-detail__icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-detail__content">
+                                <h3 class="contact-detail__title">Phone</h3>
+                                <p class="contact-detail__text">(555) 123-4567</p>
+                                <p class="contact-detail__subtext">Available 24/7 for urgent shipments</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-detail">
+                            <div class="contact-detail__icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-detail__content">
+                                <h3 class="contact-detail__title">Email</h3>
+                                <p class="contact-detail__text">info@freightpro.com</p>
+                                <p class="contact-detail__subtext">We respond within 2 hours</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-detail">
+                            <div class="contact-detail__icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-detail__content">
+                                <h3 class="contact-detail__title">Address</h3>
+                                <p class="contact-detail__text">
+                                    123 Logistics Ave, Suite 100<br>
+                                    Transport City, TC 12345
+                                </p>
+                                <p class="contact-detail__subtext">Visit us Monday-Friday, 8AM-6PM</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="contact__hours">
+                        <h3 class="contact__hours-title">Business Hours</h3>
+                        <div class="hours-list">
+                            <div class="hours-item">
+                                <span class="hours-day">Monday - Friday</span>
+                                <span class="hours-time">8:00 AM - 6:00 PM</span>
+                            </div>
+                            <div class="hours-item">
+                                <span class="hours-day">Saturday</span>
+                                <span class="hours-time">9:00 AM - 2:00 PM</span>
+                            </div>
+                            <div class="hours-item">
+                                <span class="hours-day">Sunday</span>
+                                <span class="hours-time">Emergency Only</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Contact Forms -->
+                <div class="contact__forms">
+                    <!-- Quick Quote Form -->
+                    <div class="form-container">
+                        <h3 class="form-title">Get a Quick Quote</h3>
+                        <form class="contact-form" id="quote-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="quote-name" class="form-label">Full Name *</label>
+                                    <input type="text" id="quote-name" name="name" class="form-input" required>
+                                    <span class="form-error" id="quote-name-error"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="quote-company" class="form-label">Company</label>
+                                    <input type="text" id="quote-company" name="company" class="form-input">
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="quote-email" class="form-label">Email *</label>
+                                    <input type="email" id="quote-email" name="email" class="form-input" required>
+                                    <span class="form-error" id="quote-email-error"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="quote-phone" class="form-label">Phone *</label>
+                                    <input type="tel" id="quote-phone" name="phone" class="form-input" required>
+                                    <span class="form-error" id="quote-phone-error"></span>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="quote-origin" class="form-label">Origin City *</label>
+                                    <input type="text" id="quote-origin" name="origin" class="form-input" required>
+                                    <span class="form-error" id="quote-origin-error"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="quote-destination" class="form-label">Destination City *</label>
+                                    <input type="text" id="quote-destination" name="destination" class="form-input" required>
+                                    <span class="form-error" id="quote-destination-error"></span>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="quote-load-type" class="form-label">Load Type *</label>
+                                    <select id="quote-load-type" name="loadType" class="form-select" required>
+                                        <option value="">Select Load Type</option>
+                                        <option value="dry-van">Dry Van</option>
+                                        <option value="reefer">Reefer</option>
+                                        <option value="flatbed">Flatbed</option>
+                                        <option value="ltl">LTL (Less Than Truckload)</option>
+                                        <option value="ftl">FTL (Full Truckload)</option>
+                                        <option value="specialized">Specialized</option>
+                                    </select>
+                                    <span class="form-error" id="quote-load-type-error"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="quote-weight" class="form-label">Weight (lbs)</label>
+                                    <input type="number" id="quote-weight" name="weight" class="form-input" placeholder="e.g., 45000">
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="quote-message" class="form-label">Additional Details</label>
+                                <textarea id="quote-message" name="message" class="form-textarea" rows="4" placeholder="Special requirements, delivery timeline, or other details..."></textarea>
+                            </div>
+                            
+                            <button type="submit" class="btn btn--primary btn--full">
+                                <i class="fas fa-calculator"></i>
+                                Get My Quote
+                            </button>
+                        </form>
+                    </div>
+                    
+                    <!-- General Contact Form -->
+                    <div class="form-container">
+                        <h3 class="form-title">General Inquiry</h3>
+                        <form class="contact-form" id="contact-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="contact-name" class="form-label">Full Name *</label>
+                                    <input type="text" id="contact-name" name="name" class="form-input" required>
+                                    <span class="form-error" id="contact-name-error"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="contact-email" class="form-label">Email *</label>
+                                    <input type="email" id="contact-email" name="email" class="form-input" required>
+                                    <span class="form-error" id="contact-email-error"></span>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="contact-subject" class="form-label">Subject *</label>
+                                <input type="text" id="contact-subject" name="subject" class="form-input" required>
+                                <span class="form-error" id="contact-subject-error"></span>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="contact-message" class="form-label">Message *</label>
+                                <textarea id="contact-message" name="message" class="form-textarea" rows="5" required placeholder="Tell us about your logistics needs..."></textarea>
+                                <span class="form-error" id="contact-message-error"></span>
+                            </div>
+                            
+                            <button type="submit" class="btn btn--secondary btn--full">
+                                <i class="fas fa-paper-plane"></i>
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section">
+        <div class="container">
+            <h2 class="map-section__title">Find Us</h2>
+            <div class="map-container">
+                <div class="map-placeholder">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <p>Interactive Map</p>
+                    <p>123 Logistics Ave, Suite 100<br>Transport City, TC 12345</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq section">
+        <div class="container">
+            <div class="section__header">
+                <h2 class="section__title">Frequently Asked Questions</h2>
+                <p class="section__subtitle">Quick answers to common questions</p>
+            </div>
+            
+            <div class="faq__list">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>How quickly can I get a freight quote?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We typically provide quotes within 2-4 hours during business hours. For urgent shipments, we can provide same-day quotes. Emergency requests are handled 24/7.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>What types of freight do you handle?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We handle all types of freight including dry van, reefer, flatbed, LTL, FTL, and specialized loads. Our network covers general freight, hazardous materials, oversized loads, and temperature-controlled shipments.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Do you provide cargo insurance?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, we offer comprehensive cargo insurance coverage through our network of trusted insurance providers. We can arrange full-value coverage for your shipments with competitive rates.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>How do you ensure carrier reliability?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>All carriers in our network undergo rigorous screening including safety ratings, insurance verification, and performance history. We continuously monitor carrier performance and maintain relationships with only the most reliable operators.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Can you handle international shipments?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Currently, we specialize in domestic freight within the United States and Canada. For international shipments, we can refer you to our trusted international logistics partners.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__section">
+                    <div class="footer__brand">
+                        <a href="index.html" class="footer__logo">
+                            <i class="fas fa-truck"></i>
+                            FreightPro
+                        </a>
+                        <p class="footer__description">
+                            Professional freight brokering services connecting businesses with reliable carriers nationwide.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="footer__section">
+                    <h3 class="footer__title">Quick Links</h3>
+                    <ul class="footer__links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer__section">
+                    <h3 class="footer__title">Services</h3>
+                    <ul class="footer__links">
+                        <li><a href="services.html#freight-brokerage">Freight Brokerage</a></li>
+                        <li><a href="services.html#warehousing">Warehousing</a></li>
+                        <li><a href="services.html#logistics">Logistics Planning</a></li>
+                        <li><a href="services.html#insurance">Cargo Insurance</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer__section">
+                    <h3 class="footer__title">Contact Info</h3>
+                    <div class="footer__contact">
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>(555) 123-4567</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>info@freightpro.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>123 Logistics Ave, Suite 100<br>Transport City, TC 12345</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer__bottom">
+                <div class="footer__social">
+                    <a href="#" class="social-link" aria-label="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="social-link" aria-label="Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="social-link" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="#" class="social-link" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+                <div class="footer__legal">
+                    <p>&copy; 2024 FreightPro Logistics. All rights reserved.</p>
+                    <div class="footer__legal-links">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Service</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>
