@@ -1,4 +1,4 @@
-# FreightPro Logistics - Professional Freight Brokering Website
+# Aurus Logistics INC Logistics - Professional Freight Brokering Website
 
 A modern, responsive website for a freight brokering company built with pure HTML, CSS, and JavaScript. This website provides a professional online presence for logistics and freight brokerage services.
 
@@ -159,13 +159,13 @@ The contact forms are currently set up for demonstration. To make them functiona
 ## 📞 Support
 
 For questions or support regarding this website template:
-- **Email**: info@freightpro.com
-- **Phone**: (555) 123-4567
+- **Email**: admin@auruslogisticsinc.com
+- **Phone**: (781) 257-4722
 - **Documentation**: See inline comments in code files
 
 ## 📄 License
 
-This project is created for FreightPro Logistics. All rights reserved.
+This project is created for Aurus Logistics INC Logistics. All rights reserved.
 
 ---
 

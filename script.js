@@ -1,5 +1,5 @@
 /**
- * FreightPro Logistics - Main JavaScript File
+ * Aurus Logistics INC Logistics - Main JavaScript File
  * Handles navigation, forms, animations, and interactive features
  */
 
@@ -16,6 +16,9 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeScrollAnimations();
     initializeFAQ();
     initializeSmoothScrolling();
+    initializeAnimatedCounters();
+    initializeParallaxEffects();
+    initializeTextReveal();
 });
 
 // ===== NAVIGATION FUNCTIONALITY =====
@@ -112,13 +115,7 @@ function showTestimonial(index) {
 
 // ===== FORM VALIDATION AND HANDLING =====
 function initializeForms() {
-    const quoteForm = document.getElementById('quote-form');
     const contactForm = document.getElementById('contact-form');
-    
-    if (quoteForm) {
-        quoteForm.addEventListener('submit', handleQuoteForm);
-        addFormValidation(quoteForm);
-    }
     
     if (contactForm) {
         contactForm.addEventListener('submit', handleContactForm);
@@ -210,28 +207,6 @@ function validateForm(form) {
     return isFormValid;
 }
 
-function handleQuoteForm(e) {
-    e.preventDefault();
-    
-    if (!validateForm(e.target)) {
-        showNotification('Please correct the errors in the form', 'error');
-        return;
-    }
-    
-    // Simulate form submission
-    const submitButton = e.target.querySelector('button[type="submit"]');
-    const originalText = submitButton.innerHTML;
-    
-    submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-    submitButton.disabled = true;
-    
-    setTimeout(() => {
-        showNotification('Quote request submitted successfully! We will contact you within 2 hours.', 'success');
-        e.target.reset();
-        submitButton.innerHTML = originalText;
-        submitButton.disabled = false;
-    }, 2000);
-}
 
 function handleContactForm(e) {
     e.preventDefault();
@@ -335,14 +310,22 @@ function initializeScrollAnimations() {
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
+                entry.target.classList.add('animate');
+                
+                // Trigger counter animation for stats
+                if (entry.target.classList.contains('stat')) {
+                    animateCounter(entry.target.querySelector('.stat__number'));
+                }
             }
         });
     }, observerOptions);
     
-    // Observe elements for animation
+    // Observe all scroll-animate elements
     const animatedElements = document.querySelectorAll(`
+        .scroll-animate,
+        .scroll-animate-left,
+        .scroll-animate-right,
+        .scroll-animate-scale,
         .service-card,
         .mission-card,
         .team-member,
@@ -351,16 +334,86 @@ function initializeScrollAnimations() {
         .stat,
         .certification,
         .safety-feature,
-        .stat-card
+        .stat-card,
+        .column-card,
+        .company-mission,
+        .three-column,
+        .trust,
+        .testimonials,
+        .cta
     `);
     
     animatedElements.forEach(element => {
-        element.style.opacity = '0';
-        element.style.transform = 'translateY(30px)';
-        element.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
         observer.observe(element);
     });
 }
+
+// ===== ANIMATED COUNTERS =====
+function initializeAnimatedCounters() {
+    const counters = document.querySelectorAll('.stat__number');
+    
+    counters.forEach(counter => {
+        const target = counter.textContent;
+        const isNumber = /^\d+/.test(target);
+        
+        if (isNumber) {
+            const finalNumber = parseInt(target.match(/^\d+/)[0]);
+            counter.setAttribute('data-target', finalNumber);
+            counter.textContent = '0';
+        }
+    });
+}
+
+function animateCounter(element) {
+    const target = parseInt(element.getAttribute('data-target'));
+    const suffix = element.textContent.replace(/^\d+/, '');
+    const duration = 2000; // 2 seconds
+    const increment = target / (duration / 16); // 60fps
+    let current = 0;
+    
+    const timer = setInterval(() => {
+        current += increment;
+        if (current >= target) {
+            current = target;
+            clearInterval(timer);
+        }
+        element.textContent = Math.floor(current) + suffix;
+    }, 16);
+}
+
+// ===== PARALLAX EFFECTS =====
+function initializeParallaxEffects() {
+    const parallaxElements = document.querySelectorAll('.parallax');
+    
+    if (parallaxElements.length > 0) {
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const rate = scrolled * -0.5;
+            
+            parallaxElements.forEach(element => {
+                element.style.transform = `translateY(${rate}px)`;
+            });
+        });
+    }
+}
+
+// ===== TEXT REVEAL ANIMATION =====
+function initializeTextReveal() {
+    const textRevealElements = document.querySelectorAll('.text-reveal');
+    
+    textRevealElements.forEach(element => {
+        const text = element.textContent;
+        element.innerHTML = '';
+        
+        text.split('').forEach((char, index) => {
+            const span = document.createElement('span');
+            span.textContent = char === ' ' ? '\u00A0' : char;
+            span.style.animationDelay = `${index * 0.05}s`;
+            element.appendChild(span);
+        });
+    });
+}
+
 
 // ===== FAQ FUNCTIONALITY =====
 function initializeFAQ() {
@@ -558,4 +611,4 @@ style.textContent = `
 document.head.appendChild(style);
 
 // ===== INITIALIZATION COMPLETE =====
-console.log('FreightPro Logistics website initialized successfully!');
+console.log('Aurus Logistics INC Logistics website initialized successfully!');

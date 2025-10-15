@@ -1,6 +1,6 @@
 # Assets Directory
 
-This directory contains all the static assets for the FreightPro Logistics website.
+This directory contains all the static assets for the Aurus Logistics INC Logistics website.
 
 ## Directory Structure
 
