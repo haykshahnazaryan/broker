@@ -3913,14 +3913,14 @@ a:focus {
 .loading-logo i {
   font-size: 3rem;
   color: var(--secondary-color);
-  animation: spin 2s linear infinite;
+  /* animation: spin 2s linear infinite; */
 }
 
 .loading-logo-img {
   height: 3rem;
   width: auto;
   object-fit: contain;
-  animation: spin 2s linear infinite;
+  /* animation: spin 2s linear infinite; */
 }
 
 .loading-logo span {
