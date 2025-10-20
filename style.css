@@ -253,7 +253,7 @@ img {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: var(--spacing-md) 0;
+  /* padding: var(--spacing-md) 0; */
 }
 
 .nav__brand {
@@ -276,7 +276,7 @@ img {
 }
 
 .nav__logo-img {
-  height: 2rem;
+  height: 4rem;
   width: auto;
   object-fit: contain;
 }
