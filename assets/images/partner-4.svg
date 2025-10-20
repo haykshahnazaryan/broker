@@ -1,5 +1,4 @@
 <svg width="200" height="80" viewBox="0 0 200 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="200" height="80" rx="8" fill="#ffffff"/>
-  <text x="100" y="35" text-anchor="middle" fill="#d71921" font-family="Arial, sans-serif" font-size="28" font-weight="bold">TYSON</text>
-  <text x="100" y="55" text-anchor="middle" fill="#231f20" font-family="Arial, sans-serif" font-size="12" font-weight="bold">FOODS</text>
+  <text x="100" y="35" text-anchor="middle" fill="#ff6600" font-family="Arial, sans-serif" font-size="24" font-weight="bold">TRUCKSTOP</text>
+  <text x="100" y="55" text-anchor="middle" fill="#333333" font-family="Arial, sans-serif" font-size="12" font-weight="bold">FREIGHT MATCHING</text>
 </svg>

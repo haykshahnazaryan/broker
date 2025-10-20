@@ -18,6 +18,22 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loading-screen">
+        <div class="loading-content">
+            <div class="loading-logo">
+                <i class="fas fa-truck animate-spin"></i>
+                <span>Aurus Logistics INC</span>
+            </div>
+            <div class="loading-bar">
+                <div class="loading-progress"></div>
+            </div>
+            <div class="loading-text">
+                <span class="loading-dots">Loading</span>
+            </div>
+        </div>
+    </div>
+
     <!-- Header -->
     <header class="header" id="header">
         <nav class="nav container">
@@ -55,17 +71,41 @@
     <section class="hero" id="hero">
         <div class="hero__background"></div>
         <div class="hero__overlay"></div>
+        
+        <!-- Floating Elements -->
+        <div class="hero__floating-element">
+            <i class="fas fa-truck animate-float-up"></i>
+        </div>
+        <div class="hero__floating-element">
+            <i class="fas fa-ship animate-float-down"></i>
+        </div>
+        <div class="hero__floating-element">
+            <i class="fas fa-plane animate-float-left"></i>
+        </div>
+        
+        <!-- Particle Effects -->
+        <div class="hero__particles">
+            <div class="hero__particle"></div>
+            <div class="hero__particle"></div>
+            <div class="hero__particle"></div>
+            <div class="hero__particle"></div>
+            <div class="hero__particle"></div>
+            <div class="hero__particle"></div>
+            <div class="hero__particle"></div>
+            <div class="hero__particle"></div>
+        </div>
+        
         <div class="hero__container container">
             <div class="hero__content">
                 <h1 class="hero__title">
-                    Find The Fast
-                    <span class="hero__title-accent">Lane To Success</span>
+                    Your Freight,
+                    <span class="hero__title-accent">Our Priority.</span>
                 </h1>
                 <p class="hero__description">
                     Our streamlined logistics services take your business from Point A to Point B — the easy way
                 </p>
                 <div class="hero__buttons">
-                    <a href="contact.html" class="btn btn--primary btn--large">
+                    <a href="contact.html" class="btn btn--primary btn--large btn-ripple">
                         <i class="fas fa-truck"></i>
                         Get Started
                     </a>
@@ -80,7 +120,7 @@
         <div class="services-overview__overlay"></div>
         <div class="container">
             <div class="services-overview__grid">
-                <div class="service-card scroll-animate animate-delay-1">
+                <div class="service-card scroll-animate animate-delay-1 hover-lift">
                     <div class="service-card__icon animate-float">
                         <i class="fas fa-train"></i>
                     </div>
@@ -91,7 +131,7 @@
                     <a href="contact.html" class="service-card__link">Learn More</a>
                 </div>
                 
-                <div class="service-card scroll-animate animate-delay-2">
+                <div class="service-card scroll-animate animate-delay-2 hover-lift">
                     <div class="service-card__icon animate-float">
                         <i class="fas fa-truck"></i>
                     </div>
@@ -102,7 +142,7 @@
                     <a href="contact.html" class="service-card__link">Learn More</a>
                 </div>
                 
-                <div class="service-card scroll-animate animate-delay-3">
+                <div class="service-card scroll-animate animate-delay-3 hover-lift">
                     <div class="service-card__icon animate-float">
                         <i class="fas fa-boxes"></i>
                     </div>
@@ -113,38 +153,6 @@
                     <a href="contact.html" class="service-card__link">Learn More</a>
                 </div>
                 
-                <div class="service-card scroll-animate animate-delay-4">
-                    <div class="service-card__icon animate-float">
-                        <i class="fas fa-ship"></i>
-                    </div>
-                    <h3 class="service-card__title">Drayage</h3>
-                    <p class="service-card__description">
-                        Port and rail drayage services for seamless logistics.
-                    </p>
-                    <a href="contact.html" class="service-card__link">Learn More</a>
-                </div>
-                
-                <div class="service-card scroll-animate animate-delay-5">
-                    <div class="service-card__icon animate-float">
-                        <i class="fas fa-anchor"></i>
-                    </div>
-                    <h3 class="service-card__title">Ocean</h3>
-                    <p class="service-card__description">
-                        International ocean freight services worldwide.
-                    </p>
-                    <a href="contact.html" class="service-card__link">Learn More</a>
-                </div>
-                
-                <div class="service-card scroll-animate animate-delay-6">
-                    <div class="service-card__icon animate-float">
-                        <i class="fas fa-plane"></i>
-                    </div>
-                    <h3 class="service-card__title">Air</h3>
-                    <p class="service-card__description">
-                        Fast and reliable air freight solutions.
-                    </p>
-                    <a href="contact.html" class="service-card__link">Learn More</a>
-                </div>
             </div>
         </div>
     </section>
@@ -153,7 +161,7 @@
     <section class="company-mission section scroll-animate" id="company-mission">
         <div class="container">
             <div class="company-mission__content">
-                <h2 class="company-mission__title text-reveal">
+                <h2 class="company-mission__title">
                     <span>STREAMING LOGISTICS WITH AURUS LOGISTICS INC</span>
                 </h2>
                 <p class="company-mission__description scroll-animate animate-delay-2">
@@ -169,47 +177,40 @@
         <div class="trust__overlay"></div>
         <div class="container">
             <div class="trust__stats">
-                <div class="stat scroll-animate-scale animate-delay-1">
-                    <div class="stat__icon">
+                <div class="stat scroll-animate-scale animate-delay-1 hover-scale">
+                    <div class="stat__icon animate-heart-beat">
                         <i class="fas fa-headset"></i>
                     </div>
                     <div class="stat__number animate-count-up">24/7/365</div>
                     <div class="stat__label">Customer Support</div>
                 </div>
-                <div class="stat scroll-animate-scale animate-delay-2">
-                    <div class="stat__icon">
+                <div class="stat scroll-animate-scale animate-delay-2 hover-scale">
+                    <div class="stat__icon animate-heart-beat">
                         <i class="fas fa-truck"></i>
                     </div>
-                    <div class="stat__number animate-count-up">500+</div>
+                    <div class="stat__number animate-count-up">2000+</div>
                     <div class="stat__label">Outside Network Carriers</div>
                 </div>
-                <div class="stat scroll-animate-scale animate-delay-3">
-                    <div class="stat__icon">
+                <div class="stat scroll-animate-scale animate-delay-3 hover-scale">
+                    <div class="stat__icon animate-heart-beat">
                         <i class="fas fa-award"></i>
                     </div>
                     <div class="stat__number animate-count-up">100+</div>
                     <div class="stat__label">Premier Gold Network</div>
                 </div>
-                <div class="stat scroll-animate-scale animate-delay-4">
-                    <div class="stat__icon">
+                <div class="stat scroll-animate-scale animate-delay-4 hover-scale">
+                    <div class="stat__icon animate-heart-beat">
                         <i class="fas fa-building"></i>
                     </div>
-                    <div class="stat__number animate-count-up">5</div>
+                    <div class="stat__number animate-count-up">2</div>
                     <div class="stat__label">Offices</div>
                 </div>
-                <div class="stat scroll-animate-scale animate-delay-5">
-                    <div class="stat__icon">
+                <div class="stat scroll-animate-scale animate-delay-5 hover-scale">
+                    <div class="stat__icon animate-heart-beat">
                         <i class="fas fa-users"></i>
                     </div>
                     <div class="stat__number animate-count-up">50+</div>
                     <div class="stat__label">Trained Internal Specialist</div>
-                </div>
-                <div class="stat scroll-animate-scale animate-delay-6">
-                    <div class="stat__icon">
-                        <i class="fas fa-handshake"></i>
-                    </div>
-                    <div class="stat__number animate-count-up">1000+</div>
-                    <div class="stat__label">Valued Shippers</div>
                 </div>
             </div>
         </div>
@@ -230,19 +231,19 @@
                         <img src="assets/images/partner-1.svg" alt="Walmart" loading="lazy">
                     </div>
                     <div class="partner__logo">
-                        <img src="assets/images/partner-2.svg" alt="FedEx" loading="lazy">
+                        <img src="assets/images/TIA-Logo.png" alt="TIA" loading="lazy">
                     </div>
                     <div class="partner__logo">
                         <img src="assets/images/partner-3.svg" alt="Amazon" loading="lazy">
                     </div>
                     <div class="partner__logo">
-                        <img src="assets/images/partner-4.svg" alt="Tyson Foods" loading="lazy">
+                        <img src="assets/images/partner-4.svg" alt="TRUCKSTOP" loading="lazy">
                     </div>
                     <div class="partner__logo">
                         <img src="assets/images/partner-5.svg" alt="C.H. Robinson" loading="lazy">
                     </div>
                     <div class="partner__logo">
-                        <img src="assets/images/partner-6.svg" alt="UPS" loading="lazy">
+                        <img src="assets/images/partner-6.svg" alt="DAT" loading="lazy">
                     </div>
                     <div class="partner__logo">
                         <img src="assets/images/partner-7.svg" alt="DHL" loading="lazy">
@@ -259,22 +260,22 @@
     <section class="three-column section scroll-animate" id="three-column">
         <div class="container">
             <div class="three-column__grid">
-                <div class="column-card scroll-animate-left animate-delay-1">
-                    <h2 class="column-card__title">LOGISTICS SERVICES</h2>
-                    <h3 class="column-card__subtitle">count on us.</h3>
-                    <a href="services.html" class="btn btn--primary animate-pulse">FIND YOUR SOLUTION</a>
+                <div class="column-card scroll-animate-left animate-delay-1 hover-lift">
+                    <h2 class="column-card__title animate-fade-in-down">LOGISTICS SERVICES</h2>
+                    <h3 class="column-card__subtitle animate-fade-in-up">count on us.</h3>
+                    <a href="services.html" class="btn btn--primary btn-ripple animate-pulse">FIND YOUR SOLUTION</a>
                 </div>
                 
-                <div class="column-card scroll-animate animate-delay-2">
-                    <h2 class="column-card__title">CARRIERS</h2>
-                    <h3 class="column-card__subtitle">haul with us.</h3>
-                    <a href="contact.html" class="btn btn--primary animate-pulse">FIND YOUR LOAD</a>
+                <div class="column-card scroll-animate animate-delay-2 hover-lift">
+                    <h2 class="column-card__title animate-fade-in-down">CARRIERS</h2>
+                    <h3 class="column-card__subtitle animate-fade-in-up">haul with us.</h3>
+                    <a href="contact.html" class="btn btn--primary btn-ripple animate-pulse">FIND YOUR LOAD</a>
                 </div>
                 
-                <div class="column-card scroll-animate-right animate-delay-3">
-                    <h2 class="column-card__title">JOBS</h2>
-                    <h3 class="column-card__subtitle">work with us.</h3>
-                    <a href="contact.html" class="btn btn--primary animate-pulse">FIND YOUR JOB</a>
+                <div class="column-card scroll-animate-right animate-delay-3 hover-lift">
+                    <h2 class="column-card__title animate-fade-in-down">JOBS</h2>
+                    <h3 class="column-card__subtitle animate-fade-in-up">work with us.</h3>
+                    <a href="contact.html" class="btn btn--primary btn-ripple animate-pulse">FIND YOUR JOB</a>
                 </div>
             </div>
         </div>

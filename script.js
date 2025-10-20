@@ -10,6 +10,7 @@ const testimonialDots = document.querySelectorAll('.dot');
 
 // ===== DOM CONTENT LOADED =====
 document.addEventListener('DOMContentLoaded', function() {
+    initializeLoadingScreen();
     initializeNavigation();
     initializeTestimonials();
     initializeForms();
@@ -19,7 +20,39 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeAnimatedCounters();
     initializeParallaxEffects();
     initializeTextReveal();
+    initializeParticleEffects();
+    initializeRippleEffects();
+    initializeTypingAnimation();
+    initializeLoadingAnimations();
+    initializeAdvancedScrollEffects();
+    initializeMouseTracking();
 });
+
+// ===== LOADING SCREEN =====
+function initializeLoadingScreen() {
+    const loadingScreen = document.getElementById('loading-screen');
+    if (!loadingScreen) return;
+    
+    // Hide loading screen after page is fully loaded
+    window.addEventListener('load', function() {
+        setTimeout(() => {
+            loadingScreen.classList.add('hidden');
+            setTimeout(() => {
+                loadingScreen.style.display = 'none';
+            }, 500);
+        }, 1000); // Show loading screen for at least 1 second
+    });
+    
+    // Fallback: hide loading screen after 5 seconds regardless
+    setTimeout(() => {
+        if (!loadingScreen.classList.contains('hidden')) {
+            loadingScreen.classList.add('hidden');
+            setTimeout(() => {
+                loadingScreen.style.display = 'none';
+            }, 500);
+        }
+    }, 5000);
+}
 
 // ===== NAVIGATION FUNCTIONALITY =====
 function initializeNavigation() {
@@ -609,6 +642,305 @@ style.textContent = `
     }
 `;
 document.head.appendChild(style);
+
+// ===== PARTICLE EFFECTS =====
+function initializeParticleEffects() {
+    const particleContainer = document.querySelector('.hero__particles');
+    if (!particleContainer) return;
+    
+    // Create additional particles dynamically
+    for (let i = 0; i < 12; i++) {
+        const particle = document.createElement('div');
+        particle.className = 'hero__particle';
+        
+        // Random positioning
+        particle.style.left = Math.random() * 100 + '%';
+        particle.style.top = Math.random() * 100 + '%';
+        
+        // Random animation delay
+        particle.style.animationDelay = Math.random() * 6 + 's';
+        particle.style.animationDuration = (Math.random() * 4 + 4) + 's';
+        
+        particleContainer.appendChild(particle);
+    }
+}
+
+// ===== RIPPLE EFFECTS =====
+function initializeRippleEffects() {
+    const rippleButtons = document.querySelectorAll('.btn-ripple');
+    
+    rippleButtons.forEach(button => {
+        button.addEventListener('click', function(e) {
+            const ripple = document.createElement('span');
+            const rect = this.getBoundingClientRect();
+            const size = Math.max(rect.width, rect.height);
+            const x = e.clientX - rect.left - size / 2;
+            const y = e.clientY - rect.top - size / 2;
+            
+            ripple.style.width = ripple.style.height = size + 'px';
+            ripple.style.left = x + 'px';
+            ripple.style.top = y + 'px';
+            ripple.classList.add('ripple');
+            
+            this.appendChild(ripple);
+            
+            setTimeout(() => {
+                ripple.remove();
+            }, 600);
+        });
+    });
+}
+
+// ===== TYPING ANIMATION =====
+function initializeTypingAnimation() {
+    const typingElements = document.querySelectorAll('.typing-text');
+    
+    typingElements.forEach(element => {
+        const text = element.textContent;
+        element.textContent = '';
+        element.style.borderRight = '2px solid var(--primary-color)';
+        
+        let i = 0;
+        const typeWriter = () => {
+            if (i < text.length) {
+                element.textContent += text.charAt(i);
+                i++;
+                setTimeout(typeWriter, 100);
+            } else {
+                setTimeout(() => {
+                    element.style.borderRight = 'none';
+                }, 1000);
+            }
+        };
+        
+        // Start typing animation when element is in view
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    setTimeout(typeWriter, 500);
+                    observer.unobserve(entry.target);
+                }
+            });
+        });
+        
+        observer.observe(element);
+    });
+}
+
+// ===== LOADING ANIMATIONS =====
+function initializeLoadingAnimations() {
+    // Add loading animation to buttons
+    const buttons = document.querySelectorAll('.btn');
+    
+    buttons.forEach(button => {
+        button.addEventListener('click', function() {
+            if (this.classList.contains('loading')) return;
+            
+            this.classList.add('loading');
+            this.style.pointerEvents = 'none';
+            
+            // Simulate loading
+            setTimeout(() => {
+                this.classList.remove('loading');
+                this.style.pointerEvents = 'auto';
+            }, 2000);
+        });
+    });
+    
+    // Add skeleton loading to cards
+    const cards = document.querySelectorAll('.service-card, .column-card, .stat');
+    
+    cards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            this.style.transition = 'all 0.3s ease';
+        });
+    });
+}
+
+// ===== ADVANCED SCROLL EFFECTS =====
+function initializeAdvancedScrollEffects() {
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -100px 0px'
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Add staggered animations
+                const children = entry.target.querySelectorAll('.service-card, .stat, .column-card');
+                children.forEach((child, index) => {
+                    setTimeout(() => {
+                        child.style.animation = `fadeInUp 0.8s ease-out forwards`;
+                        child.style.opacity = '1';
+                        child.style.transform = 'translateY(0)';
+                    }, index * 100);
+                });
+                
+                // Trigger special animations based on element type
+                if (entry.target.classList.contains('services-overview')) {
+                    animateServiceCards();
+                } else if (entry.target.classList.contains('trust')) {
+                    animateStats();
+                } else if (entry.target.classList.contains('testimonials')) {
+                    animateTestimonials();
+                }
+            }
+        });
+    }, observerOptions);
+    
+    // Observe sections
+    const sections = document.querySelectorAll('.services-overview, .trust, .testimonials, .three-column');
+    sections.forEach(section => observer.observe(section));
+}
+
+// ===== MOUSE TRACKING EFFECTS =====
+function initializeMouseTracking() {
+    const cards = document.querySelectorAll('.service-card, .column-card, .stat');
+    
+    cards.forEach(card => {
+        card.addEventListener('mousemove', function(e) {
+            const rect = this.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+            
+            const rotateX = (y - centerY) / 10;
+            const rotateY = (centerX - x) / 10;
+            
+            this.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(10px)`;
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            this.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateZ(0)';
+        });
+    });
+}
+
+// ===== ANIMATION HELPERS =====
+function animateServiceCards() {
+    const cards = document.querySelectorAll('.service-card');
+    cards.forEach((card, index) => {
+        setTimeout(() => {
+            card.classList.add('animate-scale-in');
+        }, index * 150);
+    });
+}
+
+function animateStats() {
+    const stats = document.querySelectorAll('.stat');
+    stats.forEach((stat, index) => {
+        setTimeout(() => {
+            stat.classList.add('animate-zoom-in');
+            const number = stat.querySelector('.stat__number');
+            if (number) {
+                animateCounter(number);
+            }
+        }, index * 200);
+    });
+}
+
+function animateTestimonials() {
+    const testimonials = document.querySelectorAll('.testimonial');
+    testimonials.forEach((testimonial, index) => {
+        setTimeout(() => {
+            testimonial.classList.add('animate-fade-in-up');
+        }, index * 300);
+    });
+}
+
+// ===== ENHANCED FORM ANIMATIONS =====
+function enhanceFormAnimations() {
+    const formInputs = document.querySelectorAll('.form-input, .form-select, .form-textarea');
+    
+    formInputs.forEach(input => {
+        // Add focus animations
+        input.addEventListener('focus', function() {
+            this.parentElement.classList.add('focused');
+            this.style.transform = 'scale(1.02)';
+        });
+        
+        input.addEventListener('blur', function() {
+            this.parentElement.classList.remove('focused');
+            this.style.transform = 'scale(1)';
+        });
+        
+        // Add typing animation
+        input.addEventListener('input', function() {
+            this.style.borderColor = 'var(--primary-color)';
+            setTimeout(() => {
+                this.style.borderColor = '';
+            }, 1000);
+        });
+    });
+}
+
+// ===== ENHANCED BUTTON ANIMATIONS =====
+function enhanceButtonAnimations() {
+    const buttons = document.querySelectorAll('.btn');
+    
+    buttons.forEach(button => {
+        // Add click animation
+        button.addEventListener('click', function(e) {
+            this.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+                this.style.transform = '';
+            }, 150);
+        });
+        
+        // Add hover sound effect (visual feedback)
+        button.addEventListener('mouseenter', function() {
+            this.style.boxShadow = '0 10px 25px rgba(0, 0, 0, 0.2)';
+        });
+        
+        button.addEventListener('mouseleave', function() {
+            this.style.boxShadow = '';
+        });
+    });
+}
+
+// ===== ENHANCED SCROLL ANIMATIONS =====
+function initializeEnhancedScrollAnimations() {
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate');
+                
+                // Add special effects based on element type
+                if (entry.target.classList.contains('service-card')) {
+                    entry.target.style.animation = 'fadeInUp 0.8s ease-out forwards';
+                } else if (entry.target.classList.contains('stat')) {
+                    entry.target.style.animation = 'scaleIn 0.8s ease-out forwards';
+                    animateCounter(entry.target.querySelector('.stat__number'));
+                } else if (entry.target.classList.contains('column-card')) {
+                    entry.target.style.animation = 'flipInY 0.8s ease-out forwards';
+                }
+            }
+        });
+    }, observerOptions);
+    
+    // Observe all animated elements
+    const animatedElements = document.querySelectorAll(`
+        .scroll-animate,
+        .scroll-animate-left,
+        .scroll-animate-right,
+        .scroll-animate-scale,
+        .service-card,
+        .column-card,
+        .stat
+    `);
+    
+    animatedElements.forEach(element => {
+        observer.observe(element);
+    });
+}
 
 // ===== INITIALIZATION COMPLETE =====
 console.log('Aurus Logistics INC Logistics website initialized successfully!');
