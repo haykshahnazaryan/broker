@@ -243,7 +243,7 @@ img {
   top: 0;
   left: 0;
   width: 100%;
-  background: linear-gradient(135deg, var(--white) 0%, #0074e9 100%);
+  background: linear-gradient(135deg, var(--white) 30%, #0074e9 100%);
   box-shadow: var(--shadow-md);
   z-index: var(--z-fixed);
   transition: var(--transition-normal);
@@ -2523,7 +2523,7 @@ img {
 }
 
 @keyframes loadingDots {
-  0%, 20% { color: rgba(0,0,0,0); text-shadow: .25em 0 0 rgba(0,0,0,0), .5em 0 0 rgba(0,0,0,0); }
+  0%, 20% { color: rgba(255, 255, 255, 0); text-shadow: .25em 0 0 rgba(255, 255, 255, 0), .5em 0 0 rgba(255, 255, 255, 0); }
   40% { color: black; text-shadow: .25em 0 0 rgba(0,0,0,0), .5em 0 0 rgba(0,0,0,0); }
   60% { text-shadow: .25em 0 0 black, .5em 0 0 rgba(0,0,0,0); }
   80%, 100% { text-shadow: .25em 0 0 black, .5em 0 0 black; }
