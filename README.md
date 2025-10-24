@@ -159,7 +159,7 @@ The contact forms are currently set up for demonstration. To make them functiona
 ## 📞 Support
 
 For questions or support regarding this website template:
-- **Email**: admin@auruslogisticsinc.com
+- **Email**: info@auruslogisticsinc.com
 - **Phone**: (781) 257-4722
 - **Documentation**: See inline comments in code files
 
